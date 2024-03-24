@@ -4,16 +4,22 @@ import TodoItem from "./TodoItem";
 
 const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
   return (
-    <ul>
-      {todos.map((todo) => (
-        <TodoItem
-          key={todo.id}
-          todo={todo}
-          toggleTodo={toggleTodo}
-          deleteTodo={deleteTodo}
-        />
-      ))}
-    </ul>
+    <>
+      {todos.length < 1 ? (
+        <p data-testid="no-todos">No todos</p>
+      ) : (
+        <ul>
+          {todos.map((todo) => (
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              toggleTodo={toggleTodo}
+              deleteTodo={deleteTodo}
+            />
+          ))}
+        </ul>
+      )}
+    </>
   );
 };
 

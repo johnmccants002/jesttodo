@@ -8,6 +8,7 @@ const TodoItem = ({ todo, toggleTodo, deleteTodo }) => {
         type="checkbox"
         checked={todo.completed}
         onChange={() => toggleTodo(todo.id)}
+        data-testid={`todo-${todo.id}`}
       />
       <span
         style={{ textDecoration: todo.completed ? "line-through" : "none" }}
